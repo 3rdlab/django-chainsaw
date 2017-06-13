@@ -5,6 +5,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField('date published')
 
+
 class Tag(models.Model):
     title = models.CharField(max_length=20, null=False)
 
@@ -17,3 +18,5 @@ class Board(models.Model):
     hits = models.PositiveSmallIntegerField(default = 0, null=True)
     tag = models.ManyToManyField(Tag)
     pub_date = models.DateTimeField('date published')
+    def __str__(self):
+        return self.title

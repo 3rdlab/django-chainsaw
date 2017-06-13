@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'board/style.css' %}" />
+{% if latest_list %}
+    <ul>
+	{% for board in latest_list %}
+	<li><a href="{% url 'board:detail' board.id %}">
+	    {{ board.title }} </a></li>
+	{% endfor %}
+    </ul>
+
+{% else %}
+	<p> No Contents </p>
+{% endif %}

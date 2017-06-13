@@ -1,0 +1,12 @@
+
+<form action="{% url 'board:register' %}" method="post">
+    {% csrf_token %}
+   title :  <input type="text" name="title"> 
+   <br />
+
+    contents : <input type="textarea" name="contents">
+    <br />
+    <br />
+    <input type="submit" value="submit">
+
+</form>
